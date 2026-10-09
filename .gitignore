@@ -1,0 +1,44 @@
+# === Target & Build Directories ===
+target/
+build/
+.gradle/
+out/
+bin/
+
+# === IDE & Editor Files ===
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+
+# VS Code
+.vscode/
+
+# === Log Files ===
+*.log
+logs/
+
+# === OS Generated Files ===
+.DS_Store
+Thumbs.db
+
+# === Application / Environment Specific ===
+# Ignore local application configuration overrides
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Ignore secrets or environment files
+*.env
+
+# Ignore packaged binaries
+*.jar
+*.war
