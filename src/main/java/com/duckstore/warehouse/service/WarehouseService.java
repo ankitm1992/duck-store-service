@@ -43,7 +43,7 @@ public class WarehouseService {
         BigDecimal price = request.price().setScale(2);
         WarehouseRepository.DuckUpsertProjection projection =
                 repository.upsert(request.color().name(), request.size().name(), price, request.quantity());
-        return new UpsertResult(projection.getId(), projection.getColor(),projection.getSize(),projection.getPrice(),projection.getQuantity(), projection.getCreated());
+        return new UpsertResult(projection.getId(), projection.getColor(), projection.getSize(), projection.getPrice(), projection.getQuantity(), projection.getCreated());
     }
 
     @Transactional
