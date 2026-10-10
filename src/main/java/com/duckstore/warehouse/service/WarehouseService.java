@@ -6,8 +6,8 @@ import java.util.List;
 import com.duckstore.warehouse.entity.Duck;
 import com.duckstore.warehouse.enums.DuckColor;
 import com.duckstore.warehouse.enums.DuckSize;
-import com.duckstore.warehouse.exception.ConflictException;
-import com.duckstore.warehouse.exception.NotFoundException;
+import com.duckstore.shared.ConflictException;
+import com.duckstore.shared.NotFoundException;
 import com.duckstore.warehouse.model.UpsertResult;
 import com.duckstore.warehouse.model.WarehouseRequest;
 import com.duckstore.warehouse.model.WarehouseResponse;
@@ -73,8 +73,8 @@ public class WarehouseService {
         return repository
                 .findFirstByColorAndSizeAndDeletedFalseAndQuantityGreaterThanEqualOrderByPriceAsc(color, size, quantity)
                 .orElseThrow(() -> repository.existsByColorAndSizeAndDeletedFalse(color, size)
-                        ? new ConflictException("Insufficient stock: no single price lot has " + quantity
-                        + " " + color.getLabel() + " " + size.getLabel() + " ducks")
-                        : new NotFoundException("No " + color.getLabel() + " " + size.getLabel() + " ducks in the warehouse"));
+                        ? new ConflictException("Insufficient stock: " + quantity
+                        + " (" + color.getLabel() + ", " + size.getLabel() + ") ducks not available in the warehouse")
+                        : new NotFoundException(color.getLabel() + ", " + size.getLabel() + " ducks not     available in the warehouse"));
     }
 }

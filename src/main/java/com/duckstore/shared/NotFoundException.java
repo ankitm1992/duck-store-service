@@ -1,4 +1,4 @@
-package com.duckstore.warehouse.exception;
+package com.duckstore.shared;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {
