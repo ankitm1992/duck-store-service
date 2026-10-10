@@ -12,14 +12,14 @@ public class Duck {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "duck_color", nullable = false, length = 16)
+    @Column(name = "color", nullable = false, length = 16)
     private DuckColor color;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "duck_size", nullable = false, length = 16)
+    @Column(name = "size", nullable = false, length = 16)
     private DuckSize size;
 
     @Column(nullable = false, precision = 10, scale = 2)
@@ -41,11 +41,11 @@ public class Duck {
         this.quantity = quantity;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

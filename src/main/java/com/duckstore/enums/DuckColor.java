@@ -12,7 +12,18 @@ public enum DuckColor {
         this.label = label;
     }
 
+    @JsonValue
     public String getLabel() {
         return label;
+    }
+
+    @JsonCreator
+    public static DuckColor from(String value) {
+        for (DuckColor c : values()) {
+            if (c.label.equalsIgnoreCase(value.trim()) || c.name().equalsIgnoreCase(value.trim())) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException("Invalid color: " + value);
     }
 }

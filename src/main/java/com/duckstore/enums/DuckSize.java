@@ -12,7 +12,18 @@ public enum DuckSize {
         this.label = label;
     }
 
+    @JsonValue
     public String getLabel() {
         return label;
+    }
+
+    @JsonCreator
+    public static DuckSize from(String value) {
+        for (DuckSize c : values()) {
+            if (c.label.equalsIgnoreCase(value.trim()) || c.name().equalsIgnoreCase(value.trim())) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException("Invalid size: " + value);
     }
 }
