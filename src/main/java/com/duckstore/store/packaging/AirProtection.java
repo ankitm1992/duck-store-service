@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class AirProtection implements ProtectionStrategy {
     public ShippingMode mode() { return ShippingMode.AIR; }
 
-    public List<Protection> protectionFor(PackageType type) {
+    public List<Protection> getProtections(PackageType type) {
         return type == PackageType.PLASTIC
                 ? List.of(Protection.BUBBLE_WRAP_BAGS)
                 : List.of(Protection.POLYSTYRENE_BALLS);

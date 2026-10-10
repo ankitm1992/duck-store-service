@@ -12,7 +12,7 @@ public class SeaProtection implements ProtectionStrategy {
         return ShippingMode.SEA;
     }
 
-    public List<Protection> protectionFor(PackageType type) {
+    public List<Protection> getProtections(PackageType type) {
         return List.of(Protection.MOISTURE_ABSORBING_BEADS, Protection.BUBBLE_WRAP_BAGS);
     }
 }

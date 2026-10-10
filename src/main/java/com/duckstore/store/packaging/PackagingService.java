@@ -24,6 +24,6 @@ public class PackagingService {
 
     public Packaging pack(DuckSize size, ShippingMode mode) {
         PackageType type = resolver.resolve(size);
-        return new Packaging(type, strategies.get(mode).protectionFor(type));
+        return new Packaging(type, strategies.get(mode).getProtections(type));
     }
 }

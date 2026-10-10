@@ -9,5 +9,5 @@ import java.util.List;
 public interface ProtectionStrategy {
     ShippingMode mode();
 
-    List<Protection> protectionFor(PackageType packageType);
+    List<Protection> getProtections(PackageType packageType);
 }

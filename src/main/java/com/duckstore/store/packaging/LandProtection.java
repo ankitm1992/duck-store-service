@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class LandProtection implements ProtectionStrategy {
     public ShippingMode mode() { return ShippingMode.LAND; }
 
-    public List<Protection> protectionFor(PackageType type) {
+    public List<Protection> getProtections(PackageType type) {
 
         return List.of(Protection.POLYSTYRENE_BALLS);
     }
