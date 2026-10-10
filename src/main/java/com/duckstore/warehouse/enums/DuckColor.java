@@ -1,14 +1,14 @@
-package com.duckstore.enums;
+package com.duckstore.warehouse.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum DuckSize {
-    XLARGE("XLarge"), LARGE("Large"), MEDIUM("Medium"), SMALL("Small"), XSMALL("XSmall");
+public enum DuckColor {
+    RED("Red"), GREEN("Green"), YELLOW("Yellow"), BLACK("Black");
 
     private final String label;
 
-    DuckSize(String label) {
+    DuckColor(String label) {
         this.label = label;
     }
 
@@ -18,12 +18,12 @@ public enum DuckSize {
     }
 
     @JsonCreator
-    public static DuckSize from(String value) {
-        for (DuckSize c : values()) {
+    public static DuckColor from(String value) {
+        for (DuckColor c : values()) {
             if (c.label.equalsIgnoreCase(value.trim()) || c.name().equalsIgnoreCase(value.trim())) {
                 return c;
             }
         }
-        throw new IllegalArgumentException("Invalid size: " + value);
+        throw new IllegalArgumentException("Invalid color: " + value);
     }
 }

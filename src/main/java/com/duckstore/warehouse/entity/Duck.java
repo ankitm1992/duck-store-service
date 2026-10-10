@@ -1,7 +1,7 @@
-package com.duckstore.entity;
+package com.duckstore.warehouse.entity;
 
-import com.duckstore.enums.DuckColor;
-import com.duckstore.enums.DuckSize;
+import com.duckstore.warehouse.enums.DuckColor;
+import com.duckstore.warehouse.enums.DuckSize;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

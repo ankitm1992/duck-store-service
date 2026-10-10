@@ -1,4 +1,4 @@
-package com.duckstore.exception;
+package com.duckstore.warehouse.exception;
 
 public class ConflictException extends RuntimeException {
     public ConflictException(String message) {

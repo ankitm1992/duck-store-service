@@ -1,9 +1,9 @@
-package com.duckstore.model;
+package com.duckstore.warehouse.model;
 
 import java.math.BigDecimal;
 
-import com.duckstore.enums.DuckColor;
-import com.duckstore.enums.DuckSize;
+import com.duckstore.warehouse.enums.DuckColor;
+import com.duckstore.warehouse.enums.DuckSize;
 import jakarta.validation.constraints.*;
 
 public record WarehouseRequest(

@@ -1,4 +1,4 @@
-package com.duckstore.model;
+package com.duckstore.warehouse.model;
 
 import java.math.BigDecimal;
 

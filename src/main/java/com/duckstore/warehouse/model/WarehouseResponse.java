@@ -1,8 +1,8 @@
-package com.duckstore.model;
+package com.duckstore.warehouse.model;
 
-import com.duckstore.entity.Duck;
-import com.duckstore.enums.DuckColor;
-import com.duckstore.enums.DuckSize;
+import com.duckstore.warehouse.entity.Duck;
+import com.duckstore.warehouse.enums.DuckColor;
+import com.duckstore.warehouse.enums.DuckSize;
 
 import java.math.BigDecimal;
 

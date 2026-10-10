@@ -1,4 +1,4 @@
-package com.duckstore.exception;
+package com.duckstore.warehouse.exception;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

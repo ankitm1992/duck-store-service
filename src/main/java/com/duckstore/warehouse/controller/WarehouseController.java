@@ -1,12 +1,12 @@
-package com.duckstore.controller;
+package com.duckstore.warehouse.controller;
 
 import java.util.List;
 
-import com.duckstore.model.UpsertResult;
-import com.duckstore.model.WarehouseRequest;
-import com.duckstore.model.WarehouseResponse;
-import com.duckstore.model.WarehouseUpdateRequest;
-import com.duckstore.service.WarehouseService;
+import com.duckstore.warehouse.model.UpsertResult;
+import com.duckstore.warehouse.model.WarehouseRequest;
+import com.duckstore.warehouse.model.WarehouseResponse;
+import com.duckstore.warehouse.model.WarehouseUpdateRequest;
+import com.duckstore.warehouse.service.WarehouseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

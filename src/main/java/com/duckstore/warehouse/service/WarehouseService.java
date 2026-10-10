@@ -1,18 +1,18 @@
-package com.duckstore.service;
+package com.duckstore.warehouse.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import com.duckstore.entity.Duck;
-import com.duckstore.enums.DuckColor;
-import com.duckstore.enums.DuckSize;
-import com.duckstore.exception.ConflictException;
-import com.duckstore.exception.NotFoundException;
-import com.duckstore.model.UpsertResult;
-import com.duckstore.model.WarehouseRequest;
-import com.duckstore.model.WarehouseResponse;
-import com.duckstore.model.WarehouseUpdateRequest;
-import com.duckstore.repository.WarehouseRepository;
+import com.duckstore.warehouse.entity.Duck;
+import com.duckstore.warehouse.enums.DuckColor;
+import com.duckstore.warehouse.enums.DuckSize;
+import com.duckstore.warehouse.exception.ConflictException;
+import com.duckstore.warehouse.exception.NotFoundException;
+import com.duckstore.warehouse.model.UpsertResult;
+import com.duckstore.warehouse.model.WarehouseRequest;
+import com.duckstore.warehouse.model.WarehouseResponse;
+import com.duckstore.warehouse.model.WarehouseUpdateRequest;
+import com.duckstore.warehouse.repository.WarehouseRepository;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

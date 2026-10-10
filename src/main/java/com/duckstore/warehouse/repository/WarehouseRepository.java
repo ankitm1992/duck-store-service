@@ -1,11 +1,11 @@
-package com.duckstore.repository;
+package com.duckstore.warehouse.repository;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import com.duckstore.entity.Duck;
-import com.duckstore.enums.DuckColor;
-import com.duckstore.enums.DuckSize;
+import com.duckstore.warehouse.entity.Duck;
+import com.duckstore.warehouse.enums.DuckColor;
+import com.duckstore.warehouse.enums.DuckSize;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
