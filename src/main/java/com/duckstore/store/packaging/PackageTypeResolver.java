@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /** Rules 1-3: package depends on duck size only. */
 @Component
-public class PackageTypeResolver {
+    public class PackageTypeResolver {
 
     private static final Map<DuckSize, PackageType> BY_SIZE = Map.of(
             DuckSize.XLARGE, PackageType.WOOD,

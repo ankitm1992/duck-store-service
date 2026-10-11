@@ -17,9 +17,9 @@ public class PricingService {
 
     public PriceQuote quote(PricingContext context) {
         List<LineItem> items = new ArrayList<>();
-        items.add(new LineItem("Base cost (" + context.quantity() + " units)", Money.round(context.baseCost())));
+        items.add(new LineItem("Base cost (" + context.quantity() + " units)", Cost.round(context.baseCost())));
         rules.forEach(rule -> items.addAll(rule.apply(context)));
         BigDecimal total = items.stream().map(LineItem::amount).reduce(BigDecimal.ZERO, BigDecimal::add);
-        return new PriceQuote(Money.round(total), List.copyOf(items));
+        return new PriceQuote(Cost.round(total), List.copyOf(items));
     }
 }

@@ -21,12 +21,9 @@ class DestinationRule implements PricingRule {
         int rate = RATES.getOrDefault(key, DEFAULT_RATE);
         String label = RATES.containsKey(key) ? c.country().trim() : "other destination: " + c.country().trim();
         return List.of(new LineItem("Destination surcharge (" + label + ", " + rate + "%)",
-                Money.percent(c.baseCost(), rate)));
+                Cost.percent(c.baseCost(), rate)));
     }
 
-    /**
-     * Case/whitespace-insensitive; accepts a few common names for the USA.
-     */
     static String normalize(String country) {
         String upper = country.trim().replaceAll("\\s+", " ").replace(".", "").toUpperCase(Locale.ROOT);
         return ALIASES.getOrDefault(upper, upper);
