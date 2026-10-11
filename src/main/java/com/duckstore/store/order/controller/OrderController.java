@@ -3,6 +3,7 @@ package com.duckstore.store.order.controller;
 import com.duckstore.store.order.model.OrderRequest;
 import com.duckstore.store.order.model.OrderResponse;
 import com.duckstore.store.order.service.OrderService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
@@ -18,7 +19,8 @@ public class OrderController {
     }
 
     @PostMapping
-    public OrderResponse order(@Valid @RequestBody OrderRequest request) {
-        return service.quote(request);
+    public ResponseEntity<OrderResponse> order(@Valid @RequestBody OrderRequest request) {
+        OrderResponse response= service.quote(request);
+        return ResponseEntity.ok(response);
     }
 }
