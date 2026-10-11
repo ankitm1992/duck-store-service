@@ -1,6 +1,7 @@
 services:
-  db:
+  postgres:
     image: postgres:16-alpine
+    container_name: duckstore-postgres
     environment:
       POSTGRES_DB: duckstore
       POSTGRES_USER: admin
@@ -9,6 +10,8 @@ services:
       - "5455:5432"
     volumes:
       - dbdata:/var/lib/postgresql/data
+    networks:
+      - duckstore-net
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U admin -d duckstore"]
       interval: 5s
@@ -16,15 +19,22 @@ services:
       retries: 20
   backend:
     build: .
+    container_name: duck-store-service
     environment:
-      DB_URL: jdbc:postgresql://db:5432/duckstore
+      DB_URL: jdbc:postgresql://postgres:5432/duckstore
       DB_USER: admin
       DB_PASSWORD: pass1234
     depends_on:
-      db:
+      postgres:
         condition: service_healthy
+    networks:
+      - duckstore-net
     ports:
       - "8080:8080"
+
+networks:
+  duckstore-net:
+    external: true
 
 volumes:
   dbdata:

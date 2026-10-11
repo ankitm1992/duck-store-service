@@ -57,7 +57,7 @@ public class WarehouseService {
         try {
             return repository.saveAndFlush(duck);
         } catch (DataIntegrityViolationException e) {
-            throw new ConflictException("Another active duck with color: " + duck.getColor()
+            throw new ConflictException("Another duck with color: " + duck.getColor()
                     + ", size: " + duck.getSize() + ", and price: " + duck.getPrice() + " already exists.");
         }
     }
