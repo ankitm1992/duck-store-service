@@ -12,19 +12,19 @@ import org.springframework.stereotype.Component;
 class ShippingRule implements PricingRule {
 
     @Value("${price.sea.shipment:400}")
-    private int seaShipmentPrice;
+    private int seaShipmentPrice=400;
 
     @Value("${price.land.shipment.perUnit:10}")
-    private int landShipmentPricePerUnit;
+    private int landShipmentPricePerUnit=10;
 
     @Value("${price.air.shipment.perUnit:30}")
-    private int airShipmentPricePerUnit;
+    private int airShipmentPricePerUnit=30;
 
     @Value("${price.air.shipment.threshold.unit:1000}")
-    private int airShipmentThresholdUnit;
+    private int airShipmentThresholdUnit=1000;
 
     @Value("${price.air.shipment.discount.percent:15}")
-    private int airShipmentDiscountPercent;
+    private int airShipmentDiscountPercent=15;
 
     public List<LineItem> apply(PricingContext c) {
         return switch (c.shippingMode()) {
@@ -36,7 +36,7 @@ class ShippingRule implements PricingRule {
     }
 
     private List<LineItem> air(int quantity) {
-        BigDecimal charge = Cost.of(30L * airShipmentPricePerUnit);
+        BigDecimal charge = Cost.of(airShipmentPricePerUnit * quantity);
         LineItem base = new LineItem("Air shipping (30.00 x " + quantity + " units)", charge);
         if (quantity <= airShipmentThresholdUnit) {
             return List.of(base);

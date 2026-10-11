@@ -16,7 +16,7 @@ public interface WarehouseRepository extends JpaRepository<Duck, Integer> {
 
     Page<Duck> findByDeletedFalse(Pageable pageable);
 
-    Optional<Duck> findByIdAndDeletedFalse(Integer id);
+    Optional<Duck> findByIdAndDeletedFalse(Long id);
 
     Optional<Duck> findByColorAndSizeAndPriceAndDeletedFalse(DuckColor color, DuckSize size, BigDecimal price);
 

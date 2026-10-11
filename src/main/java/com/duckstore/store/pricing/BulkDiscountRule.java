@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Order(1)
 class BulkDiscountRule implements PricingRule {
     @Value("${price.bulk.discount.threshold:100}")
-    int threshold;
+    int threshold=100;
 
     @Value("${price.bulk.discount.percent:20}")
-    int percentage;
+    int percentage=20;
 
     public List<LineItem> apply(PricingContext c) {
         if (c.quantity() <= threshold) {

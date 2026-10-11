@@ -41,7 +41,7 @@ public class WarehouseController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<WarehouseResponse> update(@PathVariable Integer id, @Valid @RequestBody WarehouseUpdateRequest request) {
+    public ResponseEntity<WarehouseResponse> update(@PathVariable Long id, @Valid @RequestBody WarehouseUpdateRequest request) {
         WarehouseResponse response = WarehouseResponse.from(service.update(id, request));
         return ResponseEntity.ok(response);
 
@@ -49,7 +49,7 @@ public class WarehouseController {
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Integer id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
     }
 }

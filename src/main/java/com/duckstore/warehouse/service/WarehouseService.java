@@ -47,7 +47,7 @@ public class WarehouseService {
     }
 
     @Transactional
-    public Duck update(Integer id, WarehouseUpdateRequest request) {
+    public Duck update(Long id, WarehouseUpdateRequest request) {
         Duck duck = repository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> new NotFoundException("Duck id: " + id + " not found"));
 
@@ -63,7 +63,7 @@ public class WarehouseService {
     }
 
     @Transactional
-    public void delete(Integer id) {
+    public void delete(Long id) {
         Duck duck = repository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> new NotFoundException("Duck id: " + id + " not found"));
         duck.setDeleted(true);
