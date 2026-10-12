@@ -1,6 +1,5 @@
-package com.duckstore.store.packaging;
+package com.duckstore.store.packaging.enums;
 
-import com.duckstore.warehouse.enums.DuckColor;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 

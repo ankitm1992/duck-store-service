@@ -2,6 +2,7 @@ package com.duckstore.store.packaging;
 
 import java.util.Map;
 
+import com.duckstore.store.packaging.enums.PackageType;
 import com.duckstore.warehouse.enums.DuckSize;
 import org.springframework.stereotype.Component;
 

@@ -1,10 +1,11 @@
 package com.duckstore.store.pricing;
 
+import com.duckstore.store.pricing.model.LineItem;
+import com.duckstore.store.pricing.model.PricingContext;
+
 import java.util.List;
 
-/**
- * Each rule contributes zero or more line items. Adding a rule = adding a bean.
- */
+
 public interface PricingRule {
     List<LineItem> apply(PricingContext context);
 }

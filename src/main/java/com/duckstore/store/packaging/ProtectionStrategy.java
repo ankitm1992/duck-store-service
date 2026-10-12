@@ -1,6 +1,8 @@
 package com.duckstore.store.packaging;
 
 import com.duckstore.store.order.enums.ShippingMode;
+import com.duckstore.store.packaging.enums.PackageType;
+import com.duckstore.store.packaging.enums.ProtectionType;
 
 import java.util.List;
 
@@ -9,5 +11,5 @@ import java.util.List;
 public interface ProtectionStrategy {
     ShippingMode mode();
 
-    List<Protection> getProtections(PackageType packageType);
+    List<ProtectionType> getProtections(PackageType packageType);
 }

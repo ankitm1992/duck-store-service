@@ -3,6 +3,9 @@ package com.duckstore;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.duckstore.store.order.enums.ShippingMode;
+import com.duckstore.store.packaging.enums.PackageType;
+import com.duckstore.store.packaging.enums.ProtectionType;
+import com.duckstore.store.packaging.service.PackagingService;
 import com.duckstore.warehouse.enums.DuckSize;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -25,18 +28,18 @@ class PackagingServiceTest {
     @Test
     void airProtection() {
         assertThat(service.pack(DuckSize.LARGE, ShippingMode.AIR).protections())
-                .containsExactly(Protection.POLYSTYRENE_BALLS);
+                .containsExactly(ProtectionType.POLYSTYRENE_BALLS);
         assertThat(service.pack(DuckSize.MEDIUM, ShippingMode.AIR).protections())
-                .containsExactly(Protection.POLYSTYRENE_BALLS);
+                .containsExactly(ProtectionType.POLYSTYRENE_BALLS);
         assertThat(service.pack(DuckSize.SMALL, ShippingMode.AIR).protections())
-                .containsExactly(Protection.BUBBLE_WRAP_BAGS);
+                .containsExactly(ProtectionType.BUBBLE_WRAP_BAGS);
     }
 
     @Test
     void landAndSeaProtection() {
         assertThat(service.pack(DuckSize.SMALL, ShippingMode.LAND).protections())
-                .containsExactly(Protection.POLYSTYRENE_BALLS);
+                .containsExactly(ProtectionType.POLYSTYRENE_BALLS);
         assertThat(service.pack(DuckSize.XLARGE, ShippingMode.SEA).protections())
-                .containsExactlyInAnyOrder(Protection.MOISTURE_ABSORBING_BEADS, Protection.BUBBLE_WRAP_BAGS);
+                .containsExactlyInAnyOrder(ProtectionType.MOISTURE_ABSORBING_BEADS, ProtectionType.BUBBLE_WRAP_BAGS);
     }
 }

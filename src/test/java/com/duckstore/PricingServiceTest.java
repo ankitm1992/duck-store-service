@@ -4,8 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
 import java.util.List;
 import com.duckstore.store.order.enums.ShippingMode;
+import com.duckstore.store.pricing.model.PriceQuote;
+import com.duckstore.store.pricing.model.PricingContext;
+import com.duckstore.store.pricing.service.PricingService;
 import org.junit.jupiter.api.Test;
-import com.duckstore.store.packaging.PackageType;
+import com.duckstore.store.packaging.enums.PackageType;
 import com.duckstore.store.pricing.*;
 
 class PricingServiceTest {

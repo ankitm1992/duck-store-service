@@ -1,9 +1,14 @@
-package com.duckstore.store.pricing;
+package com.duckstore.store.pricing.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.duckstore.store.pricing.model.Cost;
+import com.duckstore.store.pricing.PricingRule;
+import com.duckstore.store.pricing.model.LineItem;
+import com.duckstore.store.pricing.model.PriceQuote;
+import com.duckstore.store.pricing.model.PricingContext;
 import org.springframework.stereotype.Service;
 
 @Service

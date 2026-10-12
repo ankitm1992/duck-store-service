@@ -8,11 +8,11 @@ import com.duckstore.warehouse.entity.Duck;
 import com.duckstore.warehouse.service.WarehouseService;
 import org.springframework.stereotype.Service;
 
-import com.duckstore.store.packaging.Packaging;
-import com.duckstore.store.packaging.PackagingService;
-import com.duckstore.store.pricing.PriceQuote;
-import com.duckstore.store.pricing.PricingContext;
-import com.duckstore.store.pricing.PricingService;
+import com.duckstore.store.packaging.model.Packaging;
+import com.duckstore.store.packaging.service.PackagingService;
+import com.duckstore.store.pricing.model.PriceQuote;
+import com.duckstore.store.pricing.model.PricingContext;
+import com.duckstore.store.pricing.service.PricingService;
 
 /** Orchestrates warehouse lookup, packaging and pricing. Contains no business rules itself. */
 @Service

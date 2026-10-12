@@ -1,4 +1,4 @@
-package com.duckstore.store.packaging;
+package com.duckstore.store.packaging.service;
 
 import java.util.List;
 import java.util.Map;
@@ -6,6 +6,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import com.duckstore.store.order.enums.ShippingMode;
+import com.duckstore.store.packaging.PackageTypeResolver;
+import com.duckstore.store.packaging.ProtectionStrategy;
+import com.duckstore.store.packaging.enums.PackageType;
+import com.duckstore.store.packaging.model.Packaging;
 import com.duckstore.warehouse.enums.DuckSize;
 import org.springframework.stereotype.Service;
 
